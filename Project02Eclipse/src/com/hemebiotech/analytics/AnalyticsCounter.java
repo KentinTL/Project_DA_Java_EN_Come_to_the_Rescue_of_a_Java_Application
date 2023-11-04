@@ -1,42 +1,25 @@
 package com.hemebiotech.analytics;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.FileWriter;
+import java.util.List;
+import java.util.Map;
 
 public class AnalyticsCounter {
-	private static int headacheCount = 0;
-	private static int rashCount = 0;
-	private static int pupilCount = 0;
 
 	public static void main(String args[]) throws Exception {
-		// first get input
-		BufferedReader reader = new BufferedReader(new FileReader(
-				"D:/Code/OpenClassrooms/Java/git/Project_DA_Java_EN_Come_to_the_Rescue_of_a_Java_Application/Project02Eclipse/symptoms.txt"));
-		String line = reader.readLine();
+		// Use ReadSymptomDataFromFile with the path to load the path into my variable
+		// myReader
+		ISymptomReader myReader = new ReadSymptomDataFromFile("./Project02Eclipse/symptoms.txt");
+		// Call GetSymptoms() method to read and stock my document txt into readedList
+		List<String> readedList = myReader.GetSymptoms();
 
-		int i = 0;
-		int headCount = 0;
-		while (line != null) {
-			i++;
-			System.out.println("symptom from file: " + line);
-			if (line.equals("headache")) {
-				headCount++;
-				System.out.println("number of headaches: " + headCount);
-			} else if (line.equals("rush")) {
-				rashCount++;
-			} else if (line.contains("pupils")) {
-				pupilCount++;
-			}
+		// Use ISymptomCounter interface to use my method into the next Step with
+		// readedList in parameter
+		ISymptomCounter listerCounter = new CountSymptomDataFromFile(readedList);
+		// Call countSymptoms() method to count and sort the list readedList
+		Map<String, Integer> listedCountedList = listerCounter.countSymptoms();
 
-			line = reader.readLine(); // get another symptom
-		}
+		// Use ISymptomWriter interface to with listedCountedList in parameter to use it
+		System.out.println(listedCountedList);
 
-		// next generate output
-		FileWriter writer = new FileWriter("result.out");
-		writer.write("headache: " + headacheCount + "\n");
-		writer.write("rash: " + rashCount + "\n");
-		writer.write("dialated pupils: " + pupilCount + "\n");
-		writer.close();
 	}
 }
