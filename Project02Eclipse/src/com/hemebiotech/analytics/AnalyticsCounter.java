@@ -10,7 +10,7 @@ public class AnalyticsCounter {
 		// myReader
 		ISymptomReader myReader = new ReadSymptomDataFromFile("./Project02Eclipse/symptoms.txt");
 		// Call GetSymptoms() method to read and stock my document txt into readedList
-		List<String> readedList = myReader.GetSymptoms();
+		List<String> readedList = myReader.getSymptoms();
 
 		// Use ISymptomCounter interface to use my method into the next Step with
 		// readedList in parameter
@@ -19,7 +19,7 @@ public class AnalyticsCounter {
 		Map<String, Integer> listedCountedList = listerCounter.countSymptoms();
 
 		// Use ISymptomWriter interface to with listedCountedList in parameter to use it
-		System.out.println(listedCountedList);
-
+		ISymptomWriter writeList = new WriteSymptomDataToFile("./Project02Eclipse/result.out");
+		writeList.writeSymptoms(listedCountedList);
 	}
 }

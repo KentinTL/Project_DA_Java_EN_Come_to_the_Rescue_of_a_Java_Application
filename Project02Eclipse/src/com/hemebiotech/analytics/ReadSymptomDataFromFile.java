@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class ReadSymptomDataFromFile implements ISymptomReader {
 
-	private String filepath;
+	private String filePath;
 
 	/**
 	 * 
@@ -21,32 +21,31 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 	 *                 one per line
 	 */
 	public ReadSymptomDataFromFile(String filepath) {
-		this.filepath = filepath;
+		this.filePath = filepath;
 	}
 
 	@Override
-	public List<String> GetSymptoms() {
+	public List<String> getSymptoms() {
 		ArrayList<String> result = new ArrayList<String>();
 		BufferedReader reader = null;
-		if (filepath != null) {
+		if (filePath != null) {
 			try {
-				System.out.println("Attempt to read : " + filepath);
-				reader = new BufferedReader(new FileReader(filepath));
+				System.out.println("Attempt to read : " + filePath);
+				reader = new BufferedReader(new FileReader(filePath));
 				String line = reader.readLine();
 				while (line != null) {
 					result.add(line);
 					line = reader.readLine();
 				}
 			} catch (FileNotFoundException e) {
-				System.out.println(filepath + " does not EXIST :(");
+				System.out.println(filePath + " does not EXIST :(");
 			} catch (IOException e) {
 				System.out.println("Exception Error");
 			} finally {
 				try {
 					if (reader != null) {
 						reader.close();
-						System.out.println(filepath + " correctly readed and closed");
-						System.out.println(result);
+						System.out.println(filePath + " correctly readed and closed");
 					} else {
 						System.out.println("reader is null");
 					}
