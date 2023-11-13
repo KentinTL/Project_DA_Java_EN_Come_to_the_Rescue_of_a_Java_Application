@@ -7,23 +7,24 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Simple brute force implementation
- *
- */
 public class ReadSymptomDataFromFile implements ISymptomReader {
 
 	private String filePath;
 
 	/**
+	 * Constructor
 	 * 
-	 * @param filepath a full or partial path to file with symptom strings in it,
-	 *                 one per line
+	 * @param filePath
 	 */
-	public ReadSymptomDataFromFile(String filepath) {
-		this.filePath = filepath;
+	public ReadSymptomDataFromFile(String filePath) {
+		this.filePath = filePath;
 	}
 
+	/**
+	 * getSymptoms read a text document filePath and return an ArrayList
+	 * 
+	 * @return result
+	 */
 	@Override
 	public List<String> getSymptoms() {
 		ArrayList<String> result = new ArrayList<String>();
