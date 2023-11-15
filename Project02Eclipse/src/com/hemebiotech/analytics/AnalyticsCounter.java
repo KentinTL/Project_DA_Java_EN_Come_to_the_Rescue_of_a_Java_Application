@@ -3,11 +3,16 @@ package com.hemebiotech.analytics;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * The Class AnalyticsCounter.
+ */
 public class AnalyticsCounter {
+
 	/**
-	 * 
-	 * @param args
-	 * @throws Exception
+	 * The main method.
+	 *
+	 * @param args the arguments
+	 * @throws Exception the exception
 	 */
 	public static void main(String args[]) throws Exception {
 		ReadSymptomDataFromFile myReader = new ReadSymptomDataFromFile("./Project02Eclipse/symptoms.txt");

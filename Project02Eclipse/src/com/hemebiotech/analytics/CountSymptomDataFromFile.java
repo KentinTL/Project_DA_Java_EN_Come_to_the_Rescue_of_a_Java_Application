@@ -5,13 +5,18 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
+/**
+ * The Class CountSymptomDataFromFile.
+ */
 public class CountSymptomDataFromFile implements ISymptomCounter {
+
+	/** The readed list. */
 	private List<String> readedList;
 
 	/**
-	 * Constructor
-	 * 
-	 * @param readedList
+	 * Constructor.
+	 *
+	 * @param readedList the readed list
 	 */
 	public CountSymptomDataFromFile(List<String> readedList) {
 		this.readedList = readedList;
@@ -19,8 +24,8 @@ public class CountSymptomDataFromFile implements ISymptomCounter {
 
 	/**
 	 * countSymptoms, method who sort a list of string and count his occurrences and
-	 * return a Map of symptoms
-	 * 
+	 * return a Map of symptoms.
+	 *
 	 * @return countedSymptoms
 	 */
 	@Override

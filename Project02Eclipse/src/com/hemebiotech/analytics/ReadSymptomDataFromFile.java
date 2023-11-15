@@ -7,22 +7,26 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The Class ReadSymptomDataFromFile.
+ */
 public class ReadSymptomDataFromFile implements ISymptomReader {
 
+	/** The file path. */
 	private String filePath;
 
 	/**
-	 * Constructor
-	 * 
-	 * @param filePath
+	 * Constructor.
+	 *
+	 * @param filePath the file path
 	 */
 	public ReadSymptomDataFromFile(String filePath) {
 		this.filePath = filePath;
 	}
 
 	/**
-	 * getSymptoms read a text document filePath and return an ArrayList
-	 * 
+	 * getSymptoms read a text document filePath and return an ArrayList.
+	 *
 	 * @return result
 	 */
 	@Override
