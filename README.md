@@ -1,18 +1,18 @@
 # How intall and use the Project02Eclipse
 
 >Project02Eclips is an cmd app, you can use it for sort and count a file unordered with a lot of same word by line for exemple: 
-*lime
-*lime
-*orange
-*lime
-*apple
-*apple
-*orange 
+* lime
+* lime
+* orange
+* lime
+* apple
+* apple
+* orange 
 
 >After using it you're gonna got a result like this
-*apple = 2
-*lime = 3
-*orange = 2
+* apple = 2
+* lime = 3
+* orange = 2
 
 ## Understand ? So let's Go
 
@@ -21,7 +21,7 @@ Follow the step on the oracle doc [here](https://docs.oracle.com/en/java/javase/
 
 ## Second Step you need to Fork the project on github
 You need to go on this [link](https://github.com/OpenClassrooms-Student-Center/Project_DA_Java_EN_Come_to_the_Rescue_of_a_Java_Application)
-Next, click on the Fork button just like picture here : [image](assetReame/Fork.png)
+Next, click on the Fork button
 
 ## Third step clone the repo on Eclipse 
 If u dont know how to do the i put a link with a tutorial for you right [here](https://www.geeksforgeeks.org/how-to-clone-a-project-from-github-using-eclipse/)
