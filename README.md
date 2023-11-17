@@ -19,23 +19,19 @@
 ##First Step install Java and JDK
 Follow the step on the oracle doc [here](https://docs.oracle.com/en/java/javase/21/install/overview-jdk-installation.html#GUID-8677A77F-231A-40F7-98B9-1FD0B48C346A)
 
-## Second Step you need to Fork the project on github
-You need to go on this [link](https://github.com/OpenClassrooms-Student-Center/Project_DA_Java_EN_Come_to_the_Rescue_of_a_Java_Application)
-Next, click on the Fork button
-
-## Third step clone the repo on Eclipse 
+## Second step clone the repo on Eclipse 
 If u dont know how to do the i put a link with a tutorial for you right [here](https://www.geeksforgeeks.org/how-to-clone-a-project-from-github-using-eclipse/)
 
-## Fourth Step put the file you need to sort and count
+## Third Step put the file you need to sort and count
 Go into the AnalitycsCounter.java file and change the file path in this :  
 		ReadSymptomDataFromFile myReader = new ReadSymptomDataFromFile("urFilePath");
 And save
 
-## Fifth Step open your cmd and :
+## Fourth Step open your cmd and :
 1. Navigate into your git folder where the project is
-2. Navigate from git to Project_DA_Java_EN_Come_to_the_Rescue_of_a_Java_Application/Project02Eclipse/src/
-3. Do this command:  javac com/hemebiotech/analytics/AnalyticsCounter.java
-4. Then this command: java com.hemebiotech.analytics.AnalyticsCounter
+2. Navigate from git to Project_DA_Java_EN_Come_to_the_Rescue_of_a_Java_Application/Project02Eclipse/
+3. Do this command:  javac -cp src src/com/hemebiotech/analytics/AnalyticsCounter.java
+4. Then this command: java -cp src com.hemebiotech.analytics.AnalyticsCounter
 
 ## Finally 
 If you have follow this 5 steps, you normaly have result.out in your project with your file sorted and counted

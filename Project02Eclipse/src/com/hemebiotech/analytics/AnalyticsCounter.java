@@ -15,13 +15,13 @@ public class AnalyticsCounter {
 	 * @throws Exception the exception
 	 */
 	public static void main(String args[]) throws Exception {
-		ReadSymptomDataFromFile myReader = new ReadSymptomDataFromFile("./Project02Eclipse/symptoms.txt");
+		ReadSymptomDataFromFile myReader = new ReadSymptomDataFromFile("symptoms.txt");
 		List<String> readedList = myReader.getSymptoms();
 
 		CountSymptomDataFromFile listerCounter = new CountSymptomDataFromFile(readedList);
 		Map<String, Integer> listedCountedList = listerCounter.countSymptoms();
 
-		WriteSymptomDataToFile writeList = new WriteSymptomDataToFile("./Project02Eclipse/result.out");
+		WriteSymptomDataToFile writeList = new WriteSymptomDataToFile("result.out");
 		writeList.writeSymptoms(listedCountedList);
 	}
 }
