@@ -1,46 +1,64 @@
 package com.hemebiotech.analytics;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Simple brute force implementation
- *
+ * The Class ReadSymptomDataFromFile.
  */
 public class ReadSymptomDataFromFile implements ISymptomReader {
 
-	private String filepath;
-	
+	/** The file path. */
+	private String filePath;
+
 	/**
-	 * 
-	 * @param filepath a full or partial path to file with symptom strings in it, one per line
+	 * Constructor.
+	 *
+	 * @param filePath the file path
 	 */
-	public ReadSymptomDataFromFile (String filepath) {
-		this.filepath = filepath;
+	public ReadSymptomDataFromFile(String filePath) {
+		this.filePath = filePath;
 	}
-	
+
+	/**
+	 * getSymptoms read a text document filePath and return an ArrayList.
+	 *
+	 * @return result
+	 */
 	@Override
-	public List<String> GetSymptoms() {
+	public List<String> getSymptoms() {
 		ArrayList<String> result = new ArrayList<String>();
-		
-		if (filepath != null) {
+		BufferedReader reader = null;
+		if (filePath != null) {
 			try {
-				BufferedReader reader = new BufferedReader (new FileReader(filepath));
+				System.out.println("Attempt to read : " + filePath);
+				reader = new BufferedReader(new FileReader(filePath));
 				String line = reader.readLine();
-				
 				while (line != null) {
 					result.add(line);
 					line = reader.readLine();
 				}
-				reader.close();
+			} catch (FileNotFoundException e) {
+				System.out.println(filePath + " does not EXIST :(");
 			} catch (IOException e) {
-				e.printStackTrace();
+				System.out.println("Exception Error");
+			} finally {
+				try {
+					if (reader != null) {
+						reader.close();
+						System.out.println(filePath + " correctly readed and closed");
+					} else {
+						System.out.println("reader is null");
+					}
+				} catch (IOException e) {
+					System.out.println("The document can't be closed :(");
+				}
 			}
 		}
-		
 		return result;
 	}
 
